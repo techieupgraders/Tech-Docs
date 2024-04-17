@@ -1,0 +1,37 @@
+Eclipse Shotcut commands in Commenting and Uncommenting
+==========================================================
+1. Shortcut commands in Eclipse IDE :
+CTRL + / –> to comment single line of code
+CTRL + / –> the same works to uncomment the same line of code, which is already commented
+CTRL + SHIFT + / –> to comment block of code consisting of 3 or more lines of code
+CTRL + SHIFT + \ –> to uncomment block of code, which is already commented
+
+Eclipse IDE – How to show line numbers ?
+=========================================
+Right click -> show line numbers 
+
+Eclipse IDE – How to search files ?
+=======================================
+Eclipse files convention standards :
+
+All files ending .java extension are grouped as Java Types
+Whereas all other files extension like .jsp, .js, .xml, .xslt, .xsd, etc. are collectively referred as resources, 
+which includes .java also
+
+How to find Path of Files/App using Mac Spotlight Search
+
+CTRL + SHIFT + T –> used to search all Java type files (Open Type)
+CTRL + SHIFT + R –> used to search all types of files (Open Resource)
+CTRL + H –> opens dialog box which provides number of options (Search)
+
+Note: starting letter of each word typed in Capital helps to find Java files
+
+Like, for example, to find RemovingAllEntriesGreaterThanByComparingKeys.java file
+To search above file, just type RAEGTBCK after pressing CTRL + SHIFT + T simultaneously
+
+Eclipse IDE – How to locate methods in Java file ?
+===================================================
+CTRL + O –> used to search methods inside same Java class
+CTRL + H –> opens dialog box which provides number of options to find method
+
+Need of CTRL + E (Open Editor):
