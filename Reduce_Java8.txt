@@ -1,0 +1,50 @@
+package com.example.java8;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Java8ReduceExample {
+
+	public static void main(String[] args) {
+		List<String> letters = new ArrayList<String>();
+		
+		letters.add("V");
+		letters.add("I");
+		letters.add("D");
+		letters.add("Y");
+		letters.add("A");
+		
+		//Type 1 
+		String reducedString = letters.stream().reduce(
+				(e1, e2) -> e1+e2
+		).get();
+		
+		System.out.println(reducedString);
+		
+		//Type 2 
+		String reducedStringUsingIdentify = letters.stream().reduce("", (e1,e2) ->e1+e2);
+		System.out.println(reducedStringUsingIdentify);
+		
+		//Type 3 
+		String original = "Vidya";
+		String reveredString = original
+				.chars()
+				.mapToObj(
+						C -> Character.toLowerCase(
+								Character.valueOf((char)C))).reduce("", (a,b) -> b+a,  (c, d) -> c+d);
+		
+		System.out.println(reveredString);
+		
+		//4 .To get the longest string present in the Given List 
+		List<String> stringList = Arrays.asList("Vidya" , "Anand", "Murugesan");
+		
+		String longestString = stringList.stream().reduce((s1, s2) -> s1.length() > s2.length() ? s1 : s2).get();
+		
+		System.out.println(longestString);
+		
+		
+
+	}
+
+}

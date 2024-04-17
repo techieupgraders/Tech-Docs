@@ -1,0 +1,25 @@
+//1. Program to find how many male and female employees in an organization
+		Map<String, Long> genderList = employeeList.stream().collect(Collectors.groupingBy(Employee::getGender, Collectors.counting()));
+		
+		for(Map.Entry entry : genderList.entrySet())
+		{
+			if(entry.getKey().equals("Male")) {
+				System.out.println("Count of  "+entry.getKey()+ " is :"+entry.getValue());
+			}
+			
+			if(entry.getKey().equals("Female")) {
+				System.out.println("Count of  "+entry.getKey()+ " is :"+entry.getValue());
+			}
+			
+		}
+		
+		//2.Print the name of all departments in a organization
+		List<String> departmentList = employeeList.stream().map(employee -> employee.getDepartment()).distinct().sorted().collect(Collectors.toList());
+		System.out.println(departmentList);
+		
+		//3. Program to print the average age of a male and female
+		 Map<String, Double> averageAge = employeeList.stream().collect(Collectors.groupingBy(Employee::getGender, Collectors.averagingInt(Employee::getAge)));
+		 System.out.println(averageAge);
+		 
+		 //4. program to get the details of the highly paid employee details in the organization
+		 Employee highestPaidEmployee = employeeList.stream().sorted(Comparator.comparingDouble(Employee::getSalary).reversed()).findFirst().get();
